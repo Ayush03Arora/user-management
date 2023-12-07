@@ -3,11 +3,13 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import  {use}  from './data/users.js';
 import cors from "cors";
+import dotenv from "dotenv";
 
 const app = express();
-const port = 3000;
-
-mongoose.connect("mongodb://127.0.0.1:27017/userdataDB")
+const port = process.env.PORT || 3000;
+dotenv.config();
+mongoose.connect(process.env.MONGO_URL, {
+})
 .then(()=> console.log("Mongo connected"))
 .catch(err=> {
      console.log("Mongo connection error")
