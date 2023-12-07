@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  /* background: url("./img/bg.jpg") no-repeat center center/cover; */
+}
+.profile-card {
+    width: calc(25% - 15px); /* 20px margin between cards, adjust as needed */
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  background-color: #ececec;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.profile-card__header {
+  background: #2c3a47;
+  padding: 8% 3%;
+  height: 75%;
+}
+.profile-card__header__pic {
+  display: inline-block;
+  margin: auto;
+  padding: 10px;
+  background: linear-gradient(130deg, #74b9ff, #e66767);
+  border-radius: 50%;
+  background-size: 200% 200%;
+  animation: bgcolorChange 2s linear infinite;
+}
+
+@keyframes bgcolorChange {
+  25% {
+    background-position: left bottom;
+  }
+  50% {
+    background-position: right bottom;
+  }
+  75% {
+    background-position: right top;
+  }
+  100% {
+    background-position: left top;
+  }
+}
+.profile-card__header__pic img {
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.profile-card__header > h2 {
+  margin: 12px;
+  color: #e66767;
+}
+.profile-card__header > p {
+  color: #ececec;
+  font-weight: 600;
+  margin-bottom: 11px;
+}
+.delete-button
+{
+    padding: 7px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+.edit-button
+{
+    padding: 7px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.edit-form-container
+{
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: start;
+    font-size: 0.8rem;
+}
+
+.edit-label
+{
+    margin-left: 8px;
+}
+
+/* .profile-card__header__link-social > a {
+  display: inline-block;
+  color: #ececec;
+  margin: 0 0.5rem;
+  font-size: 15px;
+}
+.btn {
+  display: inline-block;
+  border: 1px solid #e66767;
+  border-radius: 4px;
+  padding: 1rem 2rem;
+  color: #e66767;
+  margin-top: 1.1rem;
+  transition: all 0.3s ease-in-out;
+}
+.btn:hover {
+  background: #e66767;
+  color: #ececec;
+} */
+.profile-card__footer {
+  display: flex;
+  align-items: center;
+  padding: 5% 2%;
+}
+.profile-card__footer__item {
+  flex: 1;
+  text-transform: uppercase;
+  color: #e66767;
+  font-size: 0.75rem;
+  position: relative;
+}
+.profile-card__footer__item:not(:last-child)::after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 25px;
+  background-color: black;
+  right: 0;
+  top: 2px;
+}
+.profile-card__footer__item span {
+  display: block;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: black;
+}
+
+@media (max-width: 1350px) {
+    .profile-card {
+      width: calc(33.33% - 15px); /* 20px margin between cards, adjust as needed */
+    }
+    .profile-card__footer__item {  
+        font-size: 0.65rem;
+      }
+
+  }
+@media (max-width: 1000px) {
+    .profile-card {
+      width: calc(50% - 15px); /* 20px margin between cards, adjust as needed */
+    }
+    .profile-card__footer__item {  
+        font-size: 0.7rem;
+      }
+  }
+  
+  /* Media query for mobile view */
+  @media (max-width: 600px) {
+    .profile-card {
+      width: 100%;
+    }
+    .profile-card__footer__item {  
+        font-size: 0.7rem;
+      }
+  }
